@@ -1,0 +1,21 @@
+diff --git a/index.js b/index.js
+index 4efe1ecc3e8a8d5547f8980eaa4bb58a3885b3df..cf2c946761bbfc264cc8dbb2b5aceb2024a291f9 100644
+--- a/index.js
++++ b/index.js
+@@ -275,12 +275,13 @@ class AutocompletePrompt extends Base {
+ 
+     if (keyName === 'tab' && this.opt.suggestOnly) {
+       if (this.currentChoices.getChoice(this.selected)) {
+-        this.rl.write(ansiEscapes.cursorLeft);
+         const autoCompleted = this.currentChoices.getChoice(
+           this.selected
+         ).value;
+-        this.rl.write(ansiEscapes.cursorForward(autoCompleted.length));
+-        this.rl.line = autoCompleted;
++        this.rl.input.emit('keypress', '\b', {name: 'backspace'}); // Remove redundant tab.
++        this.rl.line = '';
++        this.rl.write(autoCompleted);
++        this.rl.input.emit('keypress', '\b', {name: 'right'}); // Calibrate cursor to right position.
+         this.render();
+       }
+     } else if (keyName === 'down' || (keyName === 'n' && e.key.ctrl)) {

@@ -1,0 +1,56 @@
+{
+  "name": "tmodloader-server-mod-manager",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "an cli tool to manage tModLoader server's mod remotely",
+  "main": "dist/cli.js",
+  "scripts": {
+    "start": "npm run build && node dist/cli.js",
+    "dev": "npm run build -- -w",
+    "build": "tsc --sourceMap",
+    "pack": "ncc build cli.ts -o pack -m -s",
+    "lint": "eslint --config .eslintrc.cjs --ext .ts,.js,.cjs cli.ts src test",
+    "fix-lint": "npm run lint -- --fix",
+    "test": "jest test/*.test.ts --verbose"
+  },
+  "keywords": [],
+  "author": "SgLy",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/SgLy/tModLoader-server-mod-manager"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.5.0",
+    "@types/eslint": "^8.37.0",
+    "@types/inquirer": "^9.0.3",
+    "@types/inquirer-autocomplete-prompt": "^3.0.0",
+    "@types/node": "16",
+    "@types/prettier": "^2.7.2",
+    "@types/rsync": "^0.4.32",
+    "@types/yargs": "^17.0.24",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "@vercel/ncc": "^0.36.1",
+    "ansi-styles": "^6.2.1",
+    "eslint": "^8.37.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "inquirer": "^9.1.5",
+    "inquirer-autocomplete-prompt": "^3.0.0",
+    "jest": "^29.5.0",
+    "prettier": "^2.8.7",
+    "rsync": "^0.6.1",
+    "strip-ansi": "^7.0.1",
+    "ts-jest": "^29.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.3",
+    "yargs": "^17.7.1"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "inquirer-autocomplete-prompt@3.0.0": "patches/inquirer-autocomplete-prompt@3.0.0.patch"
+    }
+  }
+}

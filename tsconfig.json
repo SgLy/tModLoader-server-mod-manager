@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "baseUrl": ".",
+    "declaration": true,
+    "esModuleInterop": true,
+    "lib": ["ES2022"],
+    "module": "NodeNext",
+    "newLine": "LF",
+    "outDir": "dist",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "ES2017"
+  },
+  "files": ["./src/type.d.ts"],
+  "include": ["./cli.ts", "./src/**/*.ts", "./test/**/*.ts", "cli.ts"]
+}
