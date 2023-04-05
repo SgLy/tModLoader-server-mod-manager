@@ -1,6 +1,9 @@
 {
   "name": "tmodloader-server-mod-manager",
   "type": "module",
+  "bin": {
+    "tmlsm": "./pack/index.js"
+  },
   "version": "1.0.0",
   "description": "an cli tool to manage tModLoader server's mod remotely",
   "main": "dist/cli.js",
@@ -8,7 +11,7 @@
     "start": "npm run build && node dist/cli.js",
     "dev": "npm run build -- -w",
     "build": "tsc --sourceMap",
-    "pack": "ncc build cli.ts -o pack -m -s",
+    "pack": "ncc build cli.ts -o pack -m -s --no-source-map-register",
     "lint": "eslint --config .eslintrc.cjs --ext .ts,.js,.cjs cli.ts src test",
     "fix-lint": "npm run lint -- --fix",
     "test": "jest test/*.test.ts --verbose"
@@ -52,5 +55,8 @@
     "patchedDependencies": {
       "inquirer-autocomplete-prompt@3.0.0": "patches/inquirer-autocomplete-prompt@3.0.0.patch"
     }
+  },
+  "dependencies": {
+    "tmodloader-server-mod-manager": "^1.0.0"
   }
 }

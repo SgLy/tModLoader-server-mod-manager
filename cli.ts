@@ -1,5 +1,6 @@
-import inquirer from 'inquirer';
+#!/usr/bin/env node
 
+import inquirer from 'inquirer';
 import inquirerAutoCompletePrompt from 'inquirer-autocomplete-prompt';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
