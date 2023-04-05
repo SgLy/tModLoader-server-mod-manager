@@ -1,9 +1,7 @@
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "eslint.workingDirectories": [
-    { "!cwd": false, "directory": "./" },
-  ],
+  "eslint.workingDirectories": [{ "!cwd": false, "directory": "./" }],
   "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": false,
+  "typescript.enablePromptUseWorkspaceTsdk": false
 }
