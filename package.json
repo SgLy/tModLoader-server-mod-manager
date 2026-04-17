@@ -55,8 +55,5 @@
     "patchedDependencies": {
       "inquirer-autocomplete-prompt@3.0.0": "patches/inquirer-autocomplete-prompt@3.0.0.patch"
     }
-  },
-  "dependencies": {
-    "tmodloader-server-mod-manager": "^1.0.0"
   }
 }
